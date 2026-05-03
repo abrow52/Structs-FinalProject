@@ -3,6 +3,7 @@ Added the following operators to trivial: **, +=, -=, *=, **=, in, not in.
 
 # Running Application (bash terminal)
 - python3 runner.py
+- to exit type: quit
 
 # Running tests (bash terminal)
 Running all tests

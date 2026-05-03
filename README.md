@@ -8,7 +8,7 @@ Added the following operators to trivial: **, +=, -=, *=, **=, in, not in.
 Running all tests
 - bash run-tests.sh
 
-Running individual tests (bash terminal)
+Running individual tests
 - python3 tokenizer.py
 - python3 evaluator.py
 - python3 parser.py

@@ -4,7 +4,7 @@ Added the following operators to trivial: **, +=, -=, *=, **=, in, not in.
 # Running Application (bash terminal)
 - python3 runner.py
 
-# Running all tests (bash terminal)
+# Running tests (bash terminal)
 Running all tests
 - bash run-tests.sh
 

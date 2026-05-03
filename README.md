@@ -12,8 +12,8 @@ Running all tests
 Running individual tests
 - python3 tokenizer.py
 - python3 evaluator.py
-- python3 parser.py
-- python3 test_suite.t
+- python3 parser_1.py
+- python3 test-suite.t
 
 # Notes
 - When compiling run-tests.sh users may need to edit the run-tests.sh file to work with their version of Python

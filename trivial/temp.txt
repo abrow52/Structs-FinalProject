@@ -1,6 +1,0 @@
-test_parse_arithmetic_factor()
-test_parse_arithmetic_term()
-test_parse_arithmetic_expression()
-test_parse_relational_expression()
-test_parse_assignment_expression()
-test_parse_expression()

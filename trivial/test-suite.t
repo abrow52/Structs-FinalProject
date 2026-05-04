@@ -1,6 +1,8 @@
-print("testing test_suite.");
+print("testing test-suite.");
 
-// Tests for added operators
+// Testing added operators
+print ("Project Test");
+
 print("testing ** operator");
 assert 2 ** 3 == 8;
 assert 2 ** 4 == 16;
@@ -15,6 +17,8 @@ print("testing -= operator");
 x = 3;
 x -= 2;
 assert x == 1;
+y = 5;
+x += y;
 
 print("testing *= operator");
 x = 3;
@@ -28,12 +32,12 @@ assert x == 8;
 
 print("testing in operator");
 a = ["apple", "grapes", "mango"];
-c = ["pear", "strawberry, grapes, apple"];
+c = ["pear", "strawberry", "grapes", "apple"];
 b = "mango";
 assert b in a;
 assert "grapes" in a;
 assert "p" in "apple";
-assert "apple" in a && c;
+assert "apple" in a and "apple" in c;
 
 a = [1, 2, 3];
 b = 3;
@@ -46,6 +50,7 @@ a = ["apple", "grapes", "mango"];
 b = "pear";
 assert b not in a;
 assert "strawberry" not in a;
+assert b and "orange" not in a;
 assert "i" not in "apple";
 
 a = [1, 2, 3];
@@ -55,20 +60,30 @@ assert 0 not in a;
 assert b not in a;
 assert c + 2 not in a;
 
+print("testing +=, -=, in loop");
+x = 0;
+y = 15;
+z = 3;
+while (x != 5){
+    y -= z;
+    x += 1;
+}
+assert y == 0;
 
+print ("Project tests completed.");
 
 // Chapter 1: Numbers and Arithmetic - Test Suite
 
 print("Chapter 1: Numbers and Arithmetic");
 
-print "Testing basic numbers...";
+print ("Testing basic numbers...");
 x = 1;
 assert x == 1;
 
 x = -123.456;
 assert x == -123.456;
 
-print "Testing arithmetic operations...";
+print ("Testing arithmetic operations...");
 
 // addition
 assert 1+2 == 3;
@@ -91,13 +106,13 @@ assert (2+3)*4 == 20;
 // negation
 assert -5 == 0-5;
 
-print "Chapter 1 tests completed.";
+print ("Chapter 1 tests completed.");
 
 // Chapter 2: Variables and Assignment - Test Suite
 
 print("Chapter 2: Variables and Assignment");
 
-print "Testing variable assignment...";
+print ("Testing variable assignment...");
 x = 1;
 assert x == 1;
 assert not(x == 3);
@@ -122,16 +137,16 @@ assert x == 15;
 x = x * 2;
 assert x == 30;
 
-print "Chapter 2 tests completed.";
+print ("Chapter 2 tests completed.");
 
 // ========== Chapter 3: Strings and Basic I/O ==========
 
 print("Chapter 3: Strings and Basic I/O");
 
-print "Testing strings...";
+print ("Testing strings...");
 x = "alpha";
 assert x == "alpha";
-print x;
+print (x);
 
 // string concatenation
 assert "dog" + "cat" == "dogcat";
@@ -147,27 +162,27 @@ assert "dog" != "cat";
 assert not("dog" != "dog");
 
 // print statements
-print "Testing print statements...";
+print ("Testing print statements...");
 print("This is a string in parentheses");
-print "This is a string without parentheses";
+print ("This is a string without parentheses");
 
 name = "World";
 greeting = "Hello, " + name + "!";
-print greeting;
+print (greeting);
 
-print "Chapter 3 tests completed.";
+print ("Chapter 3 tests completed.");
 
 // Chapter 4: Booleans and Comparisons - Test Suite
 
 print("Chapter 4: Booleans and Comparisons");
 
-print "Testing boolean values...";
+print ("Testing boolean values...");
 x = true;
 assert x == true;
 x = false;
 assert x == false;
 
-print "Testing numeric comparisons...";
+print ("Testing numeric comparisons...");
 assert 1==1;
 assert not(1==2);
 assert 1!=2;
@@ -185,29 +200,29 @@ assert 3 >= 2;
 assert 2 >= 2;
 assert not(2 >= 3);
 
-print "Testing string comparisons...";
+print ("Testing string comparisons...");
 assert "dog" == "dog";
 assert not("dog" == "cat");
 assert "dog" != "cat";
 assert not("dog" != "dog");
 
-print "Testing boolean operations...";
+print ("Testing boolean operations...");
 assert true == not(false);
 assert false == not(true);
 
-print "Chapter 4 tests completed.";
+print ("Chapter 4 tests completed.");
 
 // Chapter 5: Logical Operators - Test Suite
 
 print("Chapter 5: Logical Operators");
 
-print "Testing logical NOT...";
+print ("Testing logical NOT...");
 assert not(false) == true;
 assert not(true) == false;
 assert not(1 == 2);
 assert not not(1 == 1);
 
-print "Testing logical AND...";
+print ("Testing logical AND...");
 assert true && true;
 assert not(true && false);
 assert not(false && true);
@@ -218,7 +233,7 @@ x = 1;
 assert (x == 1) && (x < 2);
 assert not((x == 2) && (x < 2));
 
-print "Testing logical OR...";
+print ("Testing logical OR...");
 assert true || true;
 assert true || false;
 assert false || true;
@@ -228,25 +243,25 @@ assert not(false || false);
 assert (x == 1) || (x == 2);
 assert not((x == 3) || (x == 4));
 
-print "Testing combined logical expressions...";
+print ("Testing combined logical expressions...");
 assert (true && true) || false;
 assert not((false && true) || false);
 assert true || (false && true);
 
-print "Chapter 5 tests completed.";
+print ("Chapter 5 tests completed.");
 
 // Chapter 6: Conditional Statements - Test Suite
 
 print("Chapter 6: Conditional Statements");
 
-print "Testing basic if statements...";
+print ("Testing basic if statements...");
 x = 2;
 if (x < 3) {
     x = x + 4
 }
 assert x == 6;
 
-print "Testing if-else statements...";
+print ("Testing if-else statements...");
 x = 2;
 if (x < 3) {
     x = x + 4
@@ -263,7 +278,7 @@ if (x < 3) {
 }
 assert x == 10;
 
-print "Testing nested conditionals...";
+print ("Testing nested conditionals...");
 x = 1;
 y = 2;
 if (x < 2) {
@@ -277,7 +292,7 @@ if (x < 2) {
 }
 assert x == 3;
 
-print "Testing block statement lists...";
+print ("Testing block statement lists...");
 if (true) {
     if (1) {x=1}
     if (1) {x=1; x=2}
@@ -287,57 +302,57 @@ if (true) {
 }
 assert x == 4;
 
-print "Chapter 6 tests completed.";
+print ("Chapter 6 tests completed.");
 
 // Chapter 7: Lists and Indexing - Test Suite
 
 print("Chapter 7: Lists and Indexing");
 
-print "Testing list creation...";
+print ("Testing list creation...");
 x = [1,2,3];
 print(x);
 assert x == [1,2,3];
 assert not (x == [1,2,4]);
 
-print "Testing list indexing...";
+print ("Testing list indexing...");
 assert x[0] == 1;
 assert x[1] == 2;
 assert x[2] == 3;
 
-print "Testing list assignment...";
+print ("Testing list assignment...");
 x[1] = 27;
 assert x[1] == 27;
 assert x == [1,27,3];
 
-print "Testing list concatenation...";
+print ("Testing list concatenation...");
 a = [1,2];
 b = [3,4];
 c = a + b;
 assert c == [1,2,3,4];
 
-print "Testing list comparison...";
+print ("Testing list comparison...");
 assert [1,2,3] == [1,2,3];
 assert not([1,2,3] == [1,2,4]);
 assert [1,2,3] != [1,2,4];
 assert not([1,2,3] != [1,2,3]);
 
-print "Testing empty lists...";
+print ("Testing empty lists...");
 empty = [];
 assert empty == [];
 assert not(empty == [1]);
 
-print "Testing nested lists...";
+print ("Testing nested lists...");
 nested = [[1,2], [3,4]];
 assert nested[0] == [1,2];
 assert nested[1][0] == 3;
 
-print "Chapter 7 tests completed.";
+print ("Chapter 7 tests completed.");
 
 // Chapter 8: Loops - Test Suite
 
 print("Chapter 8: Loops");
 
-print "Testing basic while loops...";
+print ("Testing basic while loops...");
 x = 0; 
 y = 1;
 while (y < 64) {
@@ -347,7 +362,7 @@ while (y < 64) {
 assert x == 6;
 assert y == 64;
 
-print "Testing loop with conditions...";
+print ("Testing loop with conditions...");
 sum = 0;
 i = 1;
 while (i <= 5) {
@@ -356,7 +371,7 @@ while (i <= 5) {
 }
 assert sum == 15;  // 1+2+3+4+5
 
-print "Testing nested loops...";
+print ("Testing nested loops...");
 total = 0;
 i = 1;
 while (i <= 3) {
@@ -369,7 +384,7 @@ while (i <= 3) {
 }
 assert total == 18;  // (1*1+1*2) + (2*1+2*2) + (3*1+3*2) = 3+6+9
 
-print "Testing loop with break...";
+print ("Testing loop with break...");
 count = 0;
 while (true) {
     count = count + 1;
@@ -379,7 +394,7 @@ while (true) {
 }
 assert count == 5;
 
-print "Testing loop with continue...";
+print ("Testing loop with continue...");
 sum = 0;
 i = 0;
 while (i < 10) {
@@ -391,13 +406,13 @@ while (i < 10) {
 }
 assert sum == 25;  // 1+3+5+7+9
 
-print "Chapter 8 tests completed.";
+print ("Chapter 8 tests completed.");
 
 // Chapter 9: Objects - Test Suite
 
 print("Chapter 9: Objects");
 
-print "Testing basic object creation and access...";
+print ("Testing basic object creation and access...");
 person = {
     "name": "Alice",
     "age": 30,
@@ -407,13 +422,13 @@ assert person["name"] == "Alice";
 assert person["age"] == 30;
 assert person["active"] == true;
 
-print "Testing object modification...";
+print ("Testing object modification...");
 person["age"] = 31;
 assert person["age"] == 31;
 person["city"] = "New York";
 assert person["city"] == "New York";
 
-print "Testing nested objects...";
+print ("Testing nested objects...");
 company = {
     "name": "Tech Corp",
     "employee": {
@@ -425,7 +440,7 @@ company = {
 assert company["employee"]["name"] == "Bob";
 assert company["employee"]["department"] == "Engineering";
 
-print "Testing objects with various data types...";
+print ("Testing objects with various data types...");
 mixed = {
     "number": 42,
     "text": "hello",
@@ -439,7 +454,7 @@ assert mixed["flag"] == false;
 assert mixed["list"][1] == 2;
 assert mixed["nested"]["inner"] == "value";
 
-print "Testing object operations in loops...";
+print ("Testing object operations in loops...");
 scores = {
     "alice": 95,
     "bob": 87,
@@ -450,39 +465,39 @@ count = 0;
 // Note: This test assumes object iteration is supported
 // If not supported in the language, this test may need modification
 
-print "Chapter 9 tests completed.";
+print ("Chapter 9 tests completed.");
 
 // Chapter 10: Functions - Test Suite
 
 print("Chapter 10: Functions");
 
-print "Testing basic function definition and calling...";
+print ("Testing basic function definition and calling...");
 function add(a, b) {
     return a + b
 }
 result = add(3, 5);
 assert result == 8;
 
-print "Testing function with multiple parameters...";
+print ("Testing function with multiple parameters...");
 function multiply(x, y, z) {
     return x * y * z
 }
 assert multiply(2, 3, 4) == 24;
 
-print "Testing function with no parameters...";
+print ("Testing function with no parameters...");
 function get_constant() {
     return 42
 }
 assert get_constant() == 42;
 
-print "Testing function with local variables...";
+print ("Testing function with local variables...");
 function calculate_square(n) {
     temp = n * n;
     return temp
 }
 assert calculate_square(7) == 49;
 
-print "Testing recursive functions...";
+print ("Testing recursive functions...");
 function factorial(n) {
     if (n <= 1) {
         return 1
@@ -492,7 +507,7 @@ function factorial(n) {
 }
 assert factorial(5) == 120;
 
-print "Testing functions with conditional logic...";
+print ("Testing functions with conditional logic...");
 function absolute_value(x) {
     if (x < 0) {
         return -x
@@ -503,7 +518,7 @@ function absolute_value(x) {
 assert absolute_value(-5) == 5;
 assert absolute_value(3) == 3;
 
-print "Testing function calls within expressions...";
+print ("Testing function calls within expressions...");
 function double(x) {
     return x * 2
 }
@@ -512,20 +527,20 @@ function triple(x) {
 }
 assert double(5) + triple(4) == 22;  // 10 + 12
 
-print "Testing function that returns boolean...";
+print ("Testing function that returns boolean...");
 function is_even(n) {
     return (n % 2) == 0
 }
 assert is_even(4) == true;
 assert is_even(7) == false;
 
-print "Chapter 10 tests completed.";
+print ("Chapter 10 tests completed.");
 
 // Chapter 11: Scope and Closures - Test Suite
 
 print("Chapter 11: Scope and Closures");
 
-print "Testing global vs local variable scope...";
+print ("Testing global vs local variable scope...");
 global_var = "global";
 function test_scope() {
     local_var = "local";
@@ -533,7 +548,7 @@ function test_scope() {
 }
 assert test_scope() == "global local";
 
-print "Testing variable shadowing...";
+print ("Testing variable shadowing...");
 x = "outer";
 function shadow_test() {
     x = "inner";
@@ -542,7 +557,7 @@ function shadow_test() {
 assert shadow_test() == "inner";
 assert x == "outer";  // outer x unchanged
 
-print "Testing basic closures...";
+print ("Testing basic closures...");
 function make_counter() {
     count = 0;
     function counter() {
@@ -556,7 +571,7 @@ assert my_counter() == 1;
 assert my_counter() == 2;
 assert my_counter() == 3;
 
-print "Testing closures with parameters...";
+print ("Testing closures with parameters...");
 function make_multiplier(factor) {
     function multiplier(x) {
         return x * factor
@@ -568,7 +583,7 @@ triple = make_multiplier(3);
 assert double(5) == 10;
 assert triple(4) == 12;
 
-print "Testing multiple closures maintaining separate state...";
+print ("Testing multiple closures maintaining separate state...");
 counter1 = make_counter();
 counter2 = make_counter();
 assert counter1() == 1;
@@ -576,7 +591,7 @@ assert counter2() == 1;
 assert counter1() == 2;
 assert counter2() == 2;
 
-print "Testing nested closures...";
+print ("Testing nested closures...");
 function make_adder(x) {
     function add_to(y) {
         function final_add(z) {
@@ -590,7 +605,7 @@ add_five = make_adder(5);
 add_five_and_three = add_five(3);
 assert add_five_and_three(2) == 10;  // 5 + 3 + 2
 
-print "Testing closure with conditional logic...";
+print ("Testing closure with conditional logic...");
 function make_conditional_counter(start_value) {
     current = start_value;
     function increment_if_positive(delta) {
@@ -606,13 +621,13 @@ assert pos_counter(5) == 15;
 assert pos_counter(-3) == 15;  // no change due to negative delta
 assert pos_counter(2) == 17;
 
-print "Chapter 11 tests completed.";
+print ("Chapter 11 tests completed.");
 
 // Chapter 12: Advanced Features - Test Suite
 
 print("Chapter 12: Advanced Features");
 
-print "Testing complex data structure manipulation...";
+print ("Testing complex data structure manipulation...");
 
 data = {
     "users": [
@@ -633,7 +648,7 @@ alice_average = alice_total / 3;
 assert alice_average > 91.33;  // (95+87+92)/3 = 91.33...
 assert alice_average < 91.34;  // (95+87+92)/3 = 91.33...
 
-print "Testing advanced function patterns...";
+print ("Testing advanced function patterns...");
 function apply_operation(operation, a, b) {
     return operation(a, b)
 }
@@ -644,7 +659,7 @@ function multiply_func(x, y) { return x * y }
 assert apply_operation(add_func, 5, 3) == 8;
 assert apply_operation(multiply_func, 4, 6) == 24;
 
-print "Testing complex closure scenarios...";
+print ("Testing complex closure scenarios...");
 // function create_accumulator_factory() {
 //     function make_accumulator(initial) {
 //         current = initial;
@@ -665,7 +680,7 @@ print "Testing complex closure scenarios...";
 // assert acc1(20) == 30;
 // assert acc2(15) == 120;
 
-// print "Testing mixed data type operations...";
+// print ("Testing mixed data type operations...");
 // function process_mixed_data(data_list) {
 //     result = {
 //         "numbers": [],
@@ -693,7 +708,7 @@ print "Testing complex closure scenarios...";
 // mixed_list = [42, "hello", 17, "world", true, 3.14];
 // // processed = process_mixed_data(mixed_list);
 
-// print "Testing recursive data structures...";
+// print ("Testing recursive data structures...");
 // function build_nested_structure(depth) {
 //     if (depth <= 0) {
 //         return {"value": "leaf", "depth": 0}
@@ -712,7 +727,7 @@ print "Testing complex closure scenarios...";
 // assert nested["child"]["depth"] == 2;
 // assert nested["child"]["child"]["child"]["value"] == "leaf";
 
-// print "Testing advanced control flow...";
+// print ("Testing advanced control flow...");
 // function fibonacci_iterative(n) {
 //     if (n <= 1) {
 //         return n
@@ -735,7 +750,7 @@ print "Testing complex closure scenarios...";
 // assert fibonacci_iterative(6) == 8;  // 0,1,1,2,3,5,8
 // assert fibonacci_iterative(10) == 55;
 
-// print "Chapter 12 tests completed.";
+// print ("Chapter 12 tests completed.");
 
-// print "All language features tested successfully!";
+// print ("All language features tested successfully!");
 print("done.\n");

@@ -421,7 +421,7 @@ def evaluate(ast, environment):
         right_value, _ = evaluate(ast["right"], environment)
 
         if not isinstance(right_value, (list, str, dict)):
-            raise Exception(f"Illegal types for {ast['tag']}")
+            raise Exception(f"illegal types for {ast['tag']}")
 
         if ast["tag"] == "in":
             return left_value in right_value, None
@@ -807,17 +807,17 @@ def test_membership():
     equals('"apple" in ["apple", "banna"]', {}, True)
     equals('"grape" in ["apple", "banna"]', {}, False)
     equals('"pear" not in ["apple", "banna"]', {}, True)
-    equals('"apple" not in ["apple", "banna"]', {}, True)
-    equals('"a" in "apple', {}, True)
-    equals('"b" not in "apple', {}, True)
-    equals('"a" not in "apple', {}, False)
-    equals('"b" in "apple', {}, False)
+    equals('"apple" not in ["apple", "banna"]', {}, False)
+    equals('"a" in "apple"', {}, True)
+    equals('"b" not in "apple"', {}, True)
+    equals('"a" not in "apple"', {}, False)
+    equals('"b" in "apple"', {}, False)
     
 
 def test_compound_assingment():
     print("test evaluate compound assignment (+=, ...)")
     equals("x=2; x+=3", {}, 5, {"x": 5})
-    equals("x=2; x-=3", {}, 5, {"x": -1})
+    equals("x=2; x-=3", {}, -1, {"x": -1})
     equals("x=2; x*=4", {}, 8, {"x": 8})
     equals("x=2; x**=3", {}, 8, {"x": 8})
 
@@ -1288,6 +1288,8 @@ if __name__ == "__main__":
     test_evaluate_multiplication()
     test_evaluate_division()
     test_evaluate_power()
+    test_membership()
+    test_compound_assingment()
     test_evaluate_negation()
     test_evaluate_print_statement()
     test_evaluate_if_statement()

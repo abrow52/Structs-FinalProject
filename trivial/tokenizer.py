@@ -19,12 +19,15 @@ patterns = [
     [r"print", "print"],  # print keyword
     [r"import", "import"],  # import keyword
     [r"exit", "exit"],  # exit keyword
+
+    [r"\bnot in\b", "not in"],  #added operator
+
     [r"and", "&&"],  # alternate for &&
     [r"or", "||"],  # alternate for ||
-    [r"\bnot in\b", "not in"],  #added operator
+    
     [r"not", "!"],  # alternate for !
-    [r"assert", "assert"],
     [r"\bin\b", "in"],          #added operator 
+    [r"assert", "assert"],
     [r"[a-zA-Z_][a-zA-Z0-9_]*", "identifier"],  # identifiers
     [r"\*\*=", "**="],          #added operator
     [r"\*\*", "**"],            #added operator
@@ -145,7 +148,7 @@ def test_simple_tokens():
     examples.append(",")
     for example in examples:
         t = tokenize(example)[0]
-        print(t)
+        #print(t)
         assert t["tag"] == example
         assert t["line"] == 1
         assert t["column"] == 1

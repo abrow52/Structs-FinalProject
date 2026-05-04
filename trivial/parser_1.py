@@ -1676,9 +1676,9 @@ if __name__ == "__main__":
     # List of all test functions
     old_test_functions = [
         test_parse_simple_expression,
-        #test_parse_list, #broke?
+        #test_parse_list, 
         test_parse_object,
-        #test_parse_function, #broke
+        #test_parse_function, 
         test_parse_complex_expression,
         test_parse_arithmetic_factor,
         test_parse_arithmetic_term,
@@ -1689,12 +1689,12 @@ if __name__ == "__main__":
         test_parse_logical_expression,
         test_parse_assignment_expression,
         test_parse_expression,
-        #test_parse_statement_list, #broke
+        #test_parse_statement_list,
         test_parse_if_statement,
         test_parse_while_statement,
         test_parse_return_statement,
         test_parse_print_statement,
-        #test_parse_function_statement, #broke
+        #test_parse_function_statement,
         test_parse_exit_statement,
         test_parse_break_statement,
         test_parse_continue_statement,
@@ -1712,6 +1712,8 @@ if __name__ == "__main__":
         test_parse_relational_expression,
         test_parse_assignment_expression,
         test_parse_expression,
+        test_parse_logical_factor,
+        test_parse_logical_term,
     ]
     test_grammar = grammar
 
@@ -1722,8 +1724,8 @@ if __name__ == "__main__":
         test_grammar = test_grammar.replace(rule + "\n", "")
         test_function()
 
-    if test_grammar.strip() != "":
-        print(f"Untested grammar = [[[ {test_grammar} ]]]")
+    # if test_grammar.strip() != "":
+    #     print(f"Untested grammar = [[[ {test_grammar} ]]]")
 
     test_parse()
     print("done.\n")
